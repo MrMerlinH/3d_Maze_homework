@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7xq3kaqljlvi"]
+
+[ext_resource type="PackedScene" uid="uid://b6shdtgbvwn8" path="res://assets/floor_2.glb" id="1_fdeli"]
+[ext_resource type="PackedScene" uid="uid://d22wjsbeowly1" path="res://assets/wall_2.glb" id="2_3qotl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdeli"]
+size = Vector3(2.3, 4.5, 2.3)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="floor_22" parent="." instance=ExtResource("1_fdeli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4.0405655, 1)
+
+[node name="wall_22" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="wall_23" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -1, 4, 0)
+
+[node name="wall_24" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, 1)
+
+[node name="wall_25" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(4.371139e-08, -6.600236e-15, 1, -1.509958e-07, -1, 0, 1, -1.509958e-07, -4.371139e-08, -2, 4, 1)
+
+[node name="wall_26" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, 2)
+
+[node name="wall_27" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(1, -1.509958e-07, -8.742278e-08, -1.509958e-07, -1, 8.881784e-16, -8.742278e-08, 1.2312294e-14, -1, -1, 4, 2)
+
+[node name="wall_28" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
+
+[node name="wall_29" parent="." instance=ExtResource("2_3qotl")]
+transform = Transform3D(4.371139e-08, -7.488415e-15, -1, -1.509958e-07, -1, 8.881784e-16, -1, 1.509958e-07, -4.371139e-08, 0, 4, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99012756, 1.74469, 0.9935608)
+shape = SubResource("BoxShape3D_fdeli")

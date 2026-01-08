@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3nrot760gwwd"]
+
+[ext_resource type="Script" uid="uid://daiwne3jy5ocs" path="res://character_body_3d.gd" id="1_iwpo4"]
+[ext_resource type="PackedScene" uid="uid://clvr2gyja502c" path="res://assets/pistol_mp_1_2.glb" id="2_fb3t6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fb3t6"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_iwpo4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fb3t6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -1)
+
+[node name="pistol_mp_1_22" parent="Camera3D" instance=ExtResource("2_fb3t6")]
+transform = Transform3D(0.03489949, -0.019185748, 0.99920666, 0, 0.99981564, 0.019197444, -0.9993907, -0.00066998106, 0.034893062, 0.209, -0.269, -0.288)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
